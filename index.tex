@@ -1,0 +1,205 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={A3: Incarceration},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{A3: Incarceration}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\subsubsection{Introduction}\label{introduction}
+
+All the data sets in this assignment are about incarceration either in
+the state or in the country. I am going to find the average amount of
+people incarcerated in the state and the average of people incarcerated
+in Washington.The average could tell us how much the average a prison
+can take. Also to see how much of the states has people incarcerated.
+
+the data I ma going to find: What is the average value of my variable
+across all the counties? what is the average in Washington? how many
+rows does the data set have? how many columns does the data set have?
+
+\subsubsection{Summary Information}\label{summary-information}
+
+Write a summary paragraph of findings that includes the 5 values
+calculated from your summary information R script
+
+These will likely be calculated using your DPLYR skills, answering
+questions such as:~
+
+\begin{itemize}
+\tightlist
+\item
+  What is the average value of my variable across all the counties (in
+  the current year)?
+\item
+  Where is my variable the highest / lowest?
+\item
+  How much has my variable change over the last N years?
+\end{itemize}
+
+Feel free to calculate and report values that you find relevant. Again,
+remember that the purpose is to think about how these measure of
+incarceration vary by race.
+
+\subsubsection{The Dataset}\label{the-dataset}
+
+Who collected the data?\\
+How was the data collected or generated?\\
+Why was the data collected?\\
+How many observations (rows) are in your data?\\
+How many features (columns) are in the data?\\
+What, if any, ethical questions or questions of power do you need to
+consider when working with this data?\\
+What are possible limitations or problems with this data? (at least 200
+words)
+
+\subsubsection{Trends Over Time Chart}\label{trends-over-time-chart}
+
+Include a chart. Make sure to describe why you included the chart, and
+what patterns emerged
+
+The first chart that you will create and include will show the trend
+over time of your variable/topic. Think carefully about what you want to
+communicate to your user (you may have to find relevant trends in the
+dataset first!). Here are some requirements to help guide your design:
+
+\begin{itemize}
+\tightlist
+\item
+  Show more than one, but fewer than \textasciitilde10 trends
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This may mean showing the same measure for different locations or
+    different racial groups. Think carefully about a meaningful
+    comparison of locations (e.g., the top 10 counties in a state, top
+    10 states, etc.)
+  \end{itemize}
+\item
+  You must have clear x and y axis labels
+\item
+  The chart needs a clear title~
+\item
+  You need a legend for your different line colors and a clear legend
+  title
+\end{itemize}
+
+When we say ``clear'' or ``human readable'' titles and labels, that
+means that you should not just display the variable name.
+
+Here's an example of how to run an R script inside an RMarkdown file:
+
+\includegraphics{index_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\subsubsection{Variable Comparison
+Chart}\label{variable-comparison-chart}
+
+Include a chart. Make sure to describe why you included the chart, and
+what patterns emerged
+
+The second chart that you will create and include will show how two
+different (continuous) variables are related to one another. Again,
+think carefully about what such a comparison means and what you want to
+communicate to your user (you may have to find relevant trends in the
+dataset first!). Here are some requirements to help guide your design:
+
+\begin{itemize}
+\tightlist
+\item
+  You must have clear x and y axis labels
+\item
+  The chart needs a clear title~
+\item
+  If you choose to add a color encoding (not required), you need a
+  legend for your different color and a clear legend title
+\end{itemize}
+
+\subsubsection{Map}\label{map}
+
+Include a chart. Make sure to describe why you included the chart, and
+what patterns emerged
+
+The last chart that you will create and include will show how a variable
+is distributed geographically. Again, think carefully about what such a
+comparison means and what you want to communicate to your user (you may
+have to find relevant trends in the dataset first!). Here are some
+requirements to help guide your design:
+
+\begin{itemize}
+\tightlist
+\item
+  Your map needs a title
+\item
+  Your color scale needs a legend with a clear label
+\item
+  Use a map based coordinate system to set the aspect ratio of your map
+\end{itemize}
+
+\end{document}

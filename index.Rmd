@@ -1,0 +1,90 @@
+---
+title: "A3: Incarceration"
+output: html_document
+---
+
+### Introduction
+
+All the data sets in this assignment are about incarceration either in the state or in the country. I am going to find the average amount of people incarcerated.The average could tell US how much the average a prison can take. Also to see how much of the states has people incarcerated. it is about this data set.(https://github.com/melaniewalsh/Neat-Datasets/blob/main/us-prison-pop.csv?raw=true)
+
+
+
+the data I am going to find:
+What is the average value of my variable across all the counties?
+how many rows does the data set have?
+how many columns does the data set have?
+where is it the highest?
+
+
+### Summary Information
+
+Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+
+I found that the average is 159614.280282935 of the total population incarcerated. Also there are 23 columns in the data set. There are 1131 rows in the data set. The highest population in one place is 2233163 people.  
+
+
+
+### The Dataset
+
+Who collected the data?  
+comes from Vera institute. 
+How was the data collected or generated?
+from the US Department of Justice Bureau of Justice Statistics
+Why was the data collected?  
+to see how the county uses the jair or prison.
+How many observations (rows) are in your data?
+1131 rows
+How many features (columns) are in the data?  
+23 columns
+What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+How quickly will the numbers change each day because some people could be leaving while others are coming in. 
+What are possible limitations or problems with this data?   
+The problem is that the numbers could be wrong about the total population in each county.
+If the numbers are wrong then if people wanted to use this data to inform other people then they would just be giving everyone wrong information. Also all the work I did with this data in this assignment then my entire assignment would be wrong because I based everything off this graph. Also a limitation is that this data set that I am using is that it is only about places in Washington. I will not be able to use any other place outside of Washington because I only have numbers about places in Washington. If I do say something about a place outside of Washington then that would be false because I have no data about any place outside of Washington.
+
+
+### Trends Over Time Chart
+
+- Show more than one, but fewer than ~10 trends
+  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
+- You must have clear x and y axis labels
+- The chart needs a clear title 
+- You need a legend for your different line colors and a clear legend title
+
+The rural has less prisoners and suburban areas have more prisoners. 
+As the year went the total population went up in most places. 
+
+
+
+
+
+Here's an example of how to run an R script inside an RMarkdown file:
+
+``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+trend <- data[, c("year", "total_pop", "county_name")]
+trend2 <- data[, c("urbanicity", "total_pop")]
+``````
+
+### Variable Comparison Chart
+
+The code for the data set is in chart 2. It is comparing the female and male jail population rate. 
+
+``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+chart <- data[, c("female_jail_pop_rate", "male_jail_pop_rate")]
+``````
+### Map
+
+Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+
+The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+
+- Your map needs a title
+- Your color scale needs a legend with a clear label
+- Use a map based coordinate system to set the aspect ratio of your map
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
+wa_shape <- st_read('path_to_shapefile/wa_counties.shp')
+ggplot(data = wa_shape) +
+  geom_sf() + 
+  theme_minimal() +
+  labs(title = "Map of Washington with population in each prisons") 
+```
